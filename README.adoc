@@ -1,0 +1,17 @@
+= Bazel build rules
+Shuai Zhang <zhangshuai.ustc@gmail.com>
+v1.0, 2019-12-13
+
+* link:https://docs.bazel.build/versions/master/bazel-overview.html[Bazel Overview]
+
+== Apache Thrift
+
+* link:http://thrift.apache.org/[Apache Thrift]
+
+== Flex
+
+* link:https://github.com/westes/flex[Flex]
+
+== GNU Bison
+
+* link:https://www.gnu.org/software/bison/[GNU Bison]
