@@ -1,0 +1,20 @@
+load(":defs.bzl", "bar_toolchain")
+
+toolchain_type(name = "toolchain_type")
+
+bar_toolchain(
+    name = "barc_linux",
+    arch_flags = [
+        "--arch=Linux",
+        "--debug_everything",
+    ],
+    compiler_path = "/path/to/barc/on/linux",
+    system_lib = "/usr/lib/libbarc.so",
+)
+
+toolchain(
+    name = "barc_linux_toolchain",
+    toolchain = ":barc_linux",
+    toolchain_type = ":toolchain_type",
+    visibility = ["//visibility:public"],
+)

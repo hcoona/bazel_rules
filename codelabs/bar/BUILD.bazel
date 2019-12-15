@@ -1,0 +1,6 @@
+load("//rules_bar:defs.bzl", "bar_binary")
+
+bar_binary(
+    name = "myprog_on_linux",
+    srcs = ["mysrc.bar"],
+)

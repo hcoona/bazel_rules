@@ -1,0 +1,12 @@
+load("//rules_thrift:defs.bzl", "thrift_library")
+
+thrift_library(
+    name = "shared",
+    src = "shared.thrift",
+    gen = "cpp",
+)
+
+cc_library(
+    name = "shared_thrift",
+    srcs = glob(["shared_gen_cpp/**"]),
+)

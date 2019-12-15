@@ -1,0 +1,16 @@
+load("//native_tools:native_tools_toolchain.bzl", "native_tool_toolchain")
+
+toolchain_type(name = "toolchain_type")
+
+native_tool_toolchain(
+    name = "preinstalled_thrift_compiler",
+    path = "thrift",
+    visibility = ["//visibility:public"],
+)
+
+toolchain(
+    name = "preinstalled_thrift_compiler_toolchain",
+    toolchain = ":preinstalled_thrift_compiler",
+    toolchain_type = ":toolchain_type",
+    visibility = ["//visibility:public"],
+)
