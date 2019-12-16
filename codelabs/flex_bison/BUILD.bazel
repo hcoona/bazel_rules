@@ -1,0 +1,14 @@
+load("//rules_flex:defs.bzl", "flex_library")
+load("//rules_bison:defs.bzl", "bison_library")
+
+flex_library(
+    name = "thriftl",
+    src = "thriftl.ll",
+    out = "thriftl.cc",
+)
+
+bison_library(
+    name = "thrifty",
+    src = "thrifty.yy",
+    out = "thrifty.cc",
+)

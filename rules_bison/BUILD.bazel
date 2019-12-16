@@ -1,0 +1,16 @@
+load("//native_tools:native_tools_toolchain.bzl", "native_tool_toolchain")
+
+toolchain_type(name = "toolchain_type")
+
+native_tool_toolchain(
+    name = "preinstalled_bison_compiler",
+    path = "bison",
+    visibility = ["//visibility:public"],
+)
+
+toolchain(
+    name = "preinstalled_bison_compiler_toolchain",
+    toolchain = ":preinstalled_bison_compiler",
+    toolchain_type = ":toolchain_type",
+    visibility = ["//visibility:public"],
+)

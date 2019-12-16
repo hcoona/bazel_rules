@@ -1,0 +1,16 @@
+load("//native_tools:native_tools_toolchain.bzl", "native_tool_toolchain")
+
+toolchain_type(name = "toolchain_type")
+
+native_tool_toolchain(
+    name = "preinstalled_flex_compiler",
+    path = "flex",
+    visibility = ["//visibility:public"],
+)
+
+toolchain(
+    name = "preinstalled_flex_compiler_toolchain",
+    toolchain = ":preinstalled_flex_compiler",
+    toolchain_type = ":toolchain_type",
+    visibility = ["//visibility:public"],
+)
