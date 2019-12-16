@@ -11,4 +11,5 @@ bison_library(
     name = "thrifty",
     src = "thrifty.yy",
     out = "thrifty.cc",
+    gen_posix_header = True,
 )
