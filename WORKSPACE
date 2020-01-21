@@ -3,7 +3,8 @@ workspace(name = "com_github_hcoona_bazel_rules")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 register_toolchains(
-    "//rules_thrift:preinstalled_thrift_compiler_toolchain",
+    # "//rules_thrift:preinstalled_thrift_compiler_toolchain",
+    "//rules_thrift:built_thrift_compiler_toolchain",
 )
 
 register_toolchains(

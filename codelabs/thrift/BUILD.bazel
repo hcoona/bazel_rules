@@ -6,18 +6,20 @@ thrift_library(
     gen = "cpp",
 )
 
-cc_library(
-    name = "shared_thrift",
-    srcs = glob(["shared_gen_cpp/**"]),
-)
-
 thrift_library(
     name = "tutorial",
     src = "tutorial.thrift",
     gen = "cpp",
 )
 
-cc_library(
-    name = "tutorial_thrift",
-    srcs = glob(["tutorial_gen_cpp/**"]),
+cc_binary(
+    name = "server",
+    srcs = [
+        "server.cc",
+        ":shared",
+        ":tutorial",
+    ],
+    deps = [
+        "//thrift-0.13.0/lib/cpp:thrift",
+    ],
 )

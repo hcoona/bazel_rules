@@ -13,7 +13,7 @@
 #include <stdexcept>
 #include <sstream>
 
-#include "../gen-cpp/Calculator.h"
+#include "Calculator.h"
 
 using namespace std;
 using namespace apache::thrift;

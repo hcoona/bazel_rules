@@ -14,3 +14,17 @@ toolchain(
     toolchain_type = ":toolchain_type",
     visibility = ["//visibility:public"],
 )
+
+native_tool_toolchain(
+    name = "built_thrift_compiler",
+    path = "thrift-0.13.0/compiler/cpp/thrift",
+    target = "//thrift-0.13.0/compiler/cpp:thrift",
+    visibility = ["//visibility:public"],
+)
+
+toolchain(
+    name = "built_thrift_compiler_toolchain",
+    toolchain = ":built_thrift_compiler",
+    toolchain_type = ":toolchain_type",
+    visibility = ["//visibility:public"],
+)

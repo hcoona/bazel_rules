@@ -1,0 +1,20 @@
+load("//rules_genccs:defs.bzl", "genccs")
+
+genccs(
+    name = "gen_tree",
+)
+
+cc_binary(
+    name = "main",
+    srcs = [
+        "main.cc",
+        ":gen_tree",
+    ] + glob([
+        "gen_tree.cc/**",
+    ]),
+)
+
+cc_binary(
+    name = "genccs",
+    srcs = ["genccs.cc"],
+)

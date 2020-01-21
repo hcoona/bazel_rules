@@ -45,6 +45,7 @@ cc_library(
         "src/thrift/**/*.h",
     ]),
     includes = ["src"],
+    hdrs = glob(["src/thrift/**/*.h"]),
     textual_hdrs = [
         "src/thrift/protocol/TBinaryProtocol.tcc",
     ],

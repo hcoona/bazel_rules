@@ -58,7 +58,8 @@ def access_tool(toolchain_type_, ctx, tool_name):
         return struct(
             deps = [tool_data.target],
             # as the tool will be copied into tools directory
-            path = "$EXT_BUILD_DEPS/bin/{}".format(tool_data.path),
+            # path = "$EXT_BUILD_DEPS/bin/{}".format(tool_data.path),
+            path = tool_data.path,
         )
     else:
         return struct(
